@@ -1,16 +1,18 @@
-﻿var name = "Gosia";
-var gender = "female";
-var age = 34;
+﻿string inputNumber = "4594";
+int[] counts = new int[10];
 
-if (gender == "female" && age < 30)
+foreach(char digit in inputNumber)
 {
-    Console.WriteLine("Woman below 30 years old");
+    if(char.IsDigit(digit))
+    {
+        int digitValue = digit - '0';
+        counts[digitValue]++;
+    }
 }
-else if (name == "Ewa" && age == 30)
-{
-    Console.WriteLine("Ewa, 30 years old");
-}
-else if (gender == "male" && age < 18)
-{
-    Console.WriteLine("Underage man");
-}
+
+for (int i = 0; i < 10; i++)
+
+    if (counts[i] > 0)
+    {
+        Console.WriteLine($"Digit {i} occurs {counts[i]} times");
+    }
